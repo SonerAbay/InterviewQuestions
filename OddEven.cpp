@@ -75,17 +75,25 @@ void printList(NODEPTR head) {
 2->1->3->5->6->4->7
 */
 NODEPTR oddEvenList(NODEPTR head){
+	
+	if(head == NULL) {
+		printf("Gönderilen liste boş!");
+	}
 
-    NODEPTR tek = head, cift = head-> next, cHead = cift;
-    
-    while(cift != NULL && cift-> next != NULL) {
-        tek -> next = cift -> next;
-        tek = tek -> next; 
-        cift -> next = tek -> next;
-        cift = cift -> next;
-    }
-    tek -> next = cHead;
-    return head;
+	else
+	{
+		NODEPTR tek = head, cift = head-> next, cHead = cift;
+
+		while(cift != NULL && cift-> next != NULL) {
+			tek -> next = cift -> next;
+			tek = tek -> next; 
+			cift -> next = tek -> next;
+			cift = cift -> next;
+		}
+		tek -> next = cHead;
+		return head;
+	}
+
 
 }
 
