@@ -7,15 +7,15 @@ Not: Soruda bahsedilen tekillik düğümlerin içerdiği rakamlar değil sırala
 
 Soruyu “in-place” çözmeye çalışınız. Programın uzay karmaşıklığı O(1) ve zaman karmaşıklığı O(n) olmalıdır.
 
-### Örnek 1:  
+**Örnek 1:**  
 Girdi: 1->2->3->4->5->NULL  
 Çıktı:: 1->3->5->2->4->NULL   
 
-### Örnek 2:  
+**Örnek 2:**  
 Girdi: 2->1->3->5->6->4->7->NULL  
 Çıktı: 2->3->6->7->1->5->4->NULL  
 
-### Not: Sadece grup sıraları değil, grup içerisindeki görece düğüm sıraları da korunmalıdır.
+**Not:** Sadece grup sıraları değil, grup içerisindeki görece düğüm sıraları da korunmalıdır.
 
 ## Çözüm: 
 
@@ -25,6 +25,6 @@ Fonksiyonda liste başı pointer’ını geri döndürmemiz gerekiyor. Kullanıc
 
 Birbirine giren pointerlar olduğu için çözümü anlamanın en iyi yolu listenin gidişatını zihinde canlandırmak ya da kağıt üzerinde görmek. Aşağıdaki illüstrasyon çözüm algoritmasını daha iyi göstermektedir:
 
-### Zaman Karmaşıklığı : O(n)  Her bir düğümü sadece 1 defa geziyoruz.
-### Uzay Karmaşıklığı: O(1). - Tek ihtiyacımız olan şey 4 işaretçi.
+**Zaman Karmaşıklığı:** O(n)  Her bir düğümü sadece 1 defa geziyoruz.
+**Uzay Karmaşıklığı:** O(1). - Tek ihtiyacımız olan şey 4 işaretçi.
 
