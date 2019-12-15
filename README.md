@@ -8,10 +8,10 @@ Not: Soruda bahsedilen tekillik düğümlerin içerdiği rakamlar değil sırala
 Soruyu “in-place” çözmeye çalışınız. Programın uzay karmaşıklığı O(1) ve zaman karmaşıklığı O(n) olmalıdır.
 
 ### Örnek 1:
-Girdi: 1->2->3->4->5->NULL
-Çıktı:: 1->3->5->2->4->NULL
+Girdi: 1->2->3->4->5->NULL 
+Çıktı:: 1->3->5->2->4->NULL 
 
-###Örnek 2:
+### Örnek 2:
 Girdi: 2->1->3->5->6->4->7->NULL
 Çıktı: 2->3->6->7->1->5->4->NULL
 
