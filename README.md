@@ -25,6 +25,6 @@ Fonksiyonda liste başı pointer’ını geri döndürmemiz gerekiyor. Kullanıc
 
 Birbirine giren pointerlar olduğu için çözümü anlamanın en iyi yolu listenin gidişatını zihinde canlandırmak ya da kağıt üzerinde görmek. Aşağıdaki illüstrasyon çözüm algoritmasını daha iyi göstermektedir:
 
-**Zaman Karmaşıklığı:** O(n)  Her bir düğümü sadece 1 defa geziyoruz.
-**Uzay Karmaşıklığı:** O(1). - Tek ihtiyacımız olan şey 4 işaretçi.
+**Zaman Karmaşıklığı:** O(n)  Her bir düğümü sadece 1 defa geziyoruz.  
+**Uzay Karmaşıklığı:** O(1). - Tek ihtiyacımız olan şey 4 işaretçi.  
 
