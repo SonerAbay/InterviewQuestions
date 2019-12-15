@@ -2,24 +2,29 @@
 
 ## Soru:
 
-Tek başına bağlı bir liste göz önüne alındığında, tüm garip düğümleri birlikte takip eden çift düğümleri gruplayın. Lütfen not edin ki, düğüm numarasından bahsediyoruz, düğüm değerlerinden değil.
+Tek bağlı bir liste veriliyor, tüm tekilinci düğümleri gruplayıp ardına çiftinci düğümleri grup halinde bağlayınız. 
+Not: Soruda bahsedilen tekillik düğümlerin içerdiği rakamlar değil sıralarıdır.
 
-Yerinde yapmayı denemelisin. Program O (1) uzay karmaşıklığı ve O (düğümler) zaman karmaşıklığı içerisinde çalışmalıdır.
+Soruyu “in-place” çözmeye çalışınız. Programın uzay karmaşıklığı O(1) ve zaman karmaşıklığı O(n) olmalıdır.
 
-Örnek 1:
+### Örnek 1:
+Girdi: 1->2->3->4->5->NULL
+Çıktı:: 1->3->5->2->4->NULL
 
-Giriş: 1-> 2-> 3-> 4-> 5-> NULL Çıkış: 1-> 3-> 5-> 2-> 4-> NULL Örnek 2:
+###Örnek 2:
+Girdi: 2->1->3->5->6->4->7->NULL
+Çıktı: 2->3->6->7->1->5->4->NULL
 
-Giriş: 2-> 1-> 3-> 5-> 6-> 4-> 7-> NULL Çıkış: 2-> 3-> 6-> 7-> 1-> 5-> 4-> NULL Not:
+### Not: Sadece grup sıraları değil, grup içerisindeki görece düğüm sıraları da korunmalıdır.
 
-Hem çift hem de tekli grupların içindeki göreceli sıra, girişte olduğu gibi kalmalıdır. İlk düğüm garip olarak kabul edilir, ikinci düğüm de böyle devam eder ...
+## Çözüm: 
 
-Algoritma
+Dikkat etmemiz gereken nokta bizden çözümün in-place ve O(n) koşu hızında çözülmesi istenmesi. Yani yaptığımız değişiklikler yedek liste olmadan doğrudan ana liste üzerinde olmalı ve iç içe döngü olmamalı.
 
-Çözüm çok sezgisel. Ancak özlü ve hatasız bir kod yazmak önemsiz değildir.
+Fonksiyonda liste başı pointer’ını geri döndürmemiz gerekiyor. Kullanıcı tarafından gönderilen head pointer’ına dokunmuyoruz. Bu head pointer’ı aynı zamanda tekincil düğüm grubunun başı olacaktır. Çözüm için 3 tane daha pointer oluşturuyoruz(tek, cift, cHead). ‘tek’ işaretçisinde tekinci düğümleri tutuyoruz. Başlangıçta head işaretçisiyle aynı konumda. cHead işaretçisinde, çiftinci düğümlerin başlangıcını tutuyoruz, listemizin yapısından mütevellit bu head işaretçisinin next’idir. Tekinci düğümleri grupladıktan sonra sonuna bu işaretçiyi bağlayacağımız için cHead için ilk değer atamasından başka değişiklik yapmıyoruz. ‘cift’ işaretçisinde ise çiftinci sıradaki düğümleri tutuyoruz. Sadece ‘tek’ ve ‘cift’ işaretçileri üzerinde oynama yapıyoruz. Döngü içerisinde iki işaretçiyi de arada bir düğüm atlayacak şekilde next’ine bağlıyoruz. Bu sayede tekinci ve çiftinci düğümler gruplanmış oluyor. Son olarak da ‘tek’ düğümünün next’ine cHead’i bağladığımızda tüm liste istediğimiz şekilde gruplanmış oluyor.
 
-İyi biçimlendirilmiş LinkedList'in her iki ucundaki işlemleri desteklemek için iki işaretçi başı ve kuyruğu gerekir. Head ve odd değişkenleri, oddList olarak adlandırdığımız LinkedList öğesinin baş işaretçisi ve kuyruk işaretçisidir; değişkenler evenHead ve hatta başka bir LinkedList'in baş işaretçisi ve kuyruk işaretçisidir. Algoritma, orijinal LinkedList'i dolaşır ve tek düğümleri oddList'e ve çift düğümleri evenList'e yerleştirir. LinkedList'i geçmek için geçerli düğüm için bir yineleyici olarak en az bir işaretçiye ihtiyacımız var. Fakat burada işaretçiler tuhaf ve hatta sadece kuyruk işaretçilerine hizmet etmekle kalmıyor, aynı zamanda orijinal listenin yineleyicileri gibi davranıyorlar.
+Birbirine giren pointerlar olduğu için çözümü anlamanın en iyi yolu listenin gidişatını zihinde canlandırmak ya da kağıt üzerinde görmek. Aşağıdaki illüstrasyon çözüm algoritmasını daha iyi göstermektedir:
 
-Herhangi bir bağlantılı liste problemini çözmenin en iyi yolu, onu zihninizde veya bir kağıt parçası üzerinde görselleştirmektir. Algoritmamızın bir örneği aşağıdaki gibidir:
+### Zaman Karmaşıklığı : O(n)  Her bir düğümü sadece 1 defa geziyoruz.
+### Uzay Karmaşıklığı: O(1). - Tek ihtiyacımız olan şey 4 işaretçi.
 
-Karmaşıklık Analizi Zaman karmaşıklığı: O (n) Toplam nn düğümü var ve her düğümü bir kez ziyaret ediyoruz. Uzay karmaşıklığı: O (1). Tek ihtiyacımız olan dört işaretçi.
