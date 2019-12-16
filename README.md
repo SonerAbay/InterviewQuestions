@@ -23,9 +23,9 @@ Dikkat etmemiz gereken nokta bizden çözümün in-place ve O(n) koşu hızında
 
 Fonksiyonda liste başı pointer’ını geri döndürmemiz gerekiyor. Kullanıcı tarafından gönderilen head pointer’ına dokunmuyoruz. Bu head pointer’ı aynı zamanda tekincil düğüm grubunun başı olacaktır. Çözüm için 3 tane daha pointer oluşturuyoruz(tek, cift, cHead). ‘tek’ işaretçisinde tekinci düğümleri tutuyoruz. Başlangıçta head işaretçisiyle aynı konumda. cHead işaretçisinde, çiftinci düğümlerin başlangıcını tutuyoruz, listemizin yapısından mütevellit bu head işaretçisinin next’idir. Tekinci düğümleri grupladıktan sonra sonuna bu işaretçiyi bağlayacağımız için cHead için ilk değer atamasından başka değişiklik yapmıyoruz. ‘cift’ işaretçisinde ise çiftinci sıradaki düğümleri tutuyoruz. Sadece ‘tek’ ve ‘cift’ işaretçileri üzerinde oynama yapıyoruz. Döngü içerisinde iki işaretçiyi de arada bir düğüm atlayacak şekilde next’ine bağlıyoruz. Bu sayede tekinci ve çiftinci düğümler gruplanmış oluyor. Son olarak da ‘tek’ düğümünün next’ine cHead’i bağladığımızda tüm liste istediğimiz şekilde gruplanmış oluyor.
 
-Birbirine giren pointerlar olduğu için çözümü anlamanın en iyi yolu listenin gidişatını zihinde canlandırmak ya da kağıt üzerinde görmek. Aşağıdaki illüstrasyon çözüm algoritmasını daha iyi göstermektedir:
+Birbirine giren pointerlar olduğu için çözümü anlamanın en iyi yolu listenin gidişatını zihinde canlandırmak ya da kağıt üzerinde görmek. Aşağıdaki illüstrasyon çözüm algoritmasını daha iyi göstermektedir:  
 
-![alt text](https://leetcode.com/problems/odd-even-linked-list/Figures/328_Odd_Even.svg)
+![alt text](https://leetcode.com/problems/odd-even-linked-list/Figures/328_Odd_Even.svg)  
 
 **Zaman Karmaşıklığı:** O(n)  Her bir düğümü sadece 1 defa geziyoruz.  
 **Uzay Karmaşıklığı:** O(1). - Tek ihtiyacımız olan şey 4 işaretçi.  
