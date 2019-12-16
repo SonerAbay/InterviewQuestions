@@ -1,4 +1,4 @@
-# OddEvenLiskedList
+# OddEvenLinkedList
 
 ## Soru:
 
