@@ -25,8 +25,12 @@ Fonksiyonda liste başı pointer’ını geri döndürmemiz gerekiyor. Kullanıc
 
 Birbirine giren pointerlar olduğu için çözümü anlamanın en iyi yolu listenin gidişatını zihinde canlandırmak ya da kağıt üzerinde görmek. Aşağıdaki illüstrasyon çözüm algoritmasını daha iyi göstermektedir:  
 
-![alt text](https://i.hizliresim.com/GZjqG3.png)  
+![alt text](https://i.hizliresim.com/GZjqG3.png)    
 
 **Zaman Karmaşıklığı:** O(n)  Her bir düğümü sadece 1 defa geziyoruz.  
 **Uzay Karmaşıklığı:** O(1). - Tek ihtiyacımız olan şey 4 işaretçi.  
+
+**Çözüme ait tüm sunum:**  
+https://drive.google.com/file/d/1n492PYxshl4rMUZBvJDltBZvuoFTrLOP/view?usp=sharing  
+
 
